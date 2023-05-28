@@ -1,0 +1,47 @@
+<Ejercicios>
+	<ejercicio id="[RF 43]">
+		<titulo>Primer apartado, de tipo estado</titulo>
+		<tipoejercicio>0</tipoejercicio>
+		<tipo>3</tipo>
+		<subrequisitos>
+			<subrequisito>
+				<titulo>Subtitulo que no corresponde a nada</titulo>
+				<tipo>0</tipo>
+			</subrequisito>
+			<subrequisito>
+				<titulo>SUbtitulo que corresponde a regla</titulo>
+				<tipo>2</tipo>
+			</subrequisito>
+		</subrequisitos>
+	</ejercicio>
+	<ejercicio id="[RF 44]">
+		<titulo>Primer apartado que corresponde a estado</titulo>
+		<tipoejercicio>0</tipoejercicio>
+		<tipo>3</tipo>
+		<subrequisitos>
+			<subrequisito>
+				<titulo>Subtitulo que corresponde a accion</titulo>
+				<tipo>1</tipo>
+			</subrequisito>
+			<subrequisito>
+				<titulo>Subtitulo que corresponde a regla.</titulo>
+				<tipo>2</tipo>
+			</subrequisito>
+		</subrequisitos>
+	</ejercicio>
+	<ejercicio id="[FR 12]">
+		<titulo>Titulo que no corresponde a nada</titulo>
+		<tipoejercicio>0</tipoejercicio>
+		<tipo>0</tipo>
+		<subrequisitos>
+			<subrequisito>
+				<titulo>&gt;subtitulo que corresponde a regla</titulo>
+				<tipo>2</tipo>
+			</subrequisito>
+			<subrequisito>
+				<titulo>subtitulo que corresponde a estado.</titulo>
+				<tipo>3</tipo>
+			</subrequisito>
+		</subrequisitos>
+	</ejercicio>
+</Ejercicios>

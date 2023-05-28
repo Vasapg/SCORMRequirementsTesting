@@ -1,0 +1,96 @@
+#accionesdiv, #reglasdiv, #estadosdiv, #div4 {
+    white-space: normal; /* Se cambia a white-space: normal; */
+    text-overflow: clip; /* Se cambia a text-overflow: clip; */
+    overflow: hidden;
+    width: 500px;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid black;
+    word-wrap: break-word;
+}
+
+ .ejdiv{
+     height:500px;
+     width:700px;
+     border:1px solid #ccc;
+     font:16px/26px Georgia, Garamond, Serif;
+     overflow:auto
+ }
+
+ .document {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra los elementos horizontalmente */
+    justify-content: center; /* Centra los elementos verticalmente */
+}
+
+.button-container {
+    margin-top: auto;
+}
+
+ body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.box-bottom {
+    order: 3;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+}
+
+
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.box {
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+
+.boxes {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.box-header {
+    font-weight: bold;
+    text-align: center;
+}
+
+.highlight-green {
+    background-color: #c1f0c1;
+}
+
+.highlight-red {
+    background-color: #f0c1c1;
+}
+
+.button {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    background-color: gray;
+    color: white;
+    cursor: pointer;
+}

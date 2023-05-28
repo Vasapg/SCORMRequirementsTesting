@@ -66,9 +66,10 @@ function SCOInitialize(){
 }
 
 function SCOFinish(){
+	/*
 	if(((typeof(objAPI) != "undefined") && (objAPI != null)) && (bFinishDone == false)){
 		bFinishDone = (objAPI.LMSFinish("") == "true")
-	}
+	}*/
 	return(bFinishDone.toString())
 }
 
