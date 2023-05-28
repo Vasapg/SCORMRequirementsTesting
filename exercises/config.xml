@@ -3,6 +3,10 @@
     <numExercises>2</numExercises>
     <exercise id="1">
         <title>Ejercicio1</title>
-        <url>https://raw.githubusercontent.com/Vasapg/PIE-SCORM/main/Self-Assesment-6/exercises/ex1.xml</url>
+        <url>https://raw.githubusercontent.com/Vasapg/SCORMRequirementsTesting/main/exercises/ex1.xml</url>
+    </exercise>
+    <exercise id="2">
+        <title>Ejercicio2</title>
+        <url>https://raw.githubusercontent.com/Vasapg/SCORMRequirementsTesting/main/exercises/example.xml>
     </exercise>
 </document>
