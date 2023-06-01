@@ -82,7 +82,7 @@ function getDocumento(URL){
 }
 
 function getConfig() {
-    return fetch("https://raw.githubusercontent.com/Vasapg/PIE-SCORM/main/Self-Assesment-6/exercises/config.xml")
+    return fetch("https://raw.githubusercontent.com/Vasapg/SCORMRequirementsTesting/main/exercises/config.xml")
       .then(response => response.text())
       .then(data => {
         var xmlDoc = new DOMParser().parseFromString(data, "text/xml");
@@ -104,8 +104,9 @@ function getConfig() {
           titulos.push(titleTags[i].textContent);
           urls.push(urlTags[i].textContent);
         }
-        console.log(titulos);
-        console.log(urls);
+        var desordenados = desordenarArrays(urls, titulos);
+        urls = desordenados.urls;
+        titulos = desordenados.titulos;
         localStorage.setItem("urls", JSON.stringify(urls));
         localStorage.setItem("titulos", JSON.stringify(titulos));
       });
@@ -126,6 +127,31 @@ function getConfig() {
     localStorage.setItem("nEjercicio", nEjercicio);
   }
   
+  function desordenarArrays(urls, titulos) {
+    // Verificar que los arrays tengan la misma longitud
+    if (urls.length !== titulos.length) {
+      throw new Error("Los arrays deben tener la misma longitud");
+    }
+  
+    // Crear un array de índices desordenados
+    var indicesDesordenados = [];
+    for (var i = 0; i < urls.length; i++) {
+      indicesDesordenados.push(i);
+    }
+    indicesDesordenados.sort(() => Math.random() - 0.5); // Desordenar los índices
+  
+    // Crear nuevos arrays desordenados
+    var urlsDesordenadas = [];
+    var titulosDesordenados = [];
+    for (var j = 0; j < indicesDesordenados.length; j++) {
+      var indiceActual = indicesDesordenados[j];
+      urlsDesordenadas.push(urls[indiceActual]);
+      titulosDesordenados.push(titulos[indiceActual]);
+    }
+  
+    // Devolver los nuevos arrays desordenados
+    return { urls: urlsDesordenadas, titulos: titulosDesordenados };
+  }
 
 
 function comprobarXHTTP(){
@@ -217,19 +243,5 @@ function clearing(){
             estadosSol.push(texto)
         console.log(texto, tipo);
     }
-
-//if(!localStorage.getItem("texto"))
-localStorage.clear();
+    
 window.onload = getUrl();
-    /*
-else
-{
-    var texto = localStorage.getItem("texto");
-    var body = document.getElementById("documentoXML");
-    var textHTML = document.createElement("p");
-    textHTML.innerHTML = formatearTexto(texto);
-
-    var espacioHTML  = document.createElement("hr");
-    body.appendChild(textHTML);
-    body.appendChild(espacioHTML);
-}*/

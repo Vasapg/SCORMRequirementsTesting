@@ -45,7 +45,7 @@ function finish() {
 
 function finalizarActividad()
 {
-    parent.window.location = "https://moodle.upm.es/titulaciones/oficiales/mod/scorm/view.php?id=552608";
+    parent.window.location = "https://moodle.upm.es/titulaciones/oficiales/mod/scorm/view.php?id=565562";
 }
 
 function mediaArray(array) {

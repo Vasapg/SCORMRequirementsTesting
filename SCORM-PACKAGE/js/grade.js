@@ -44,10 +44,12 @@ agregarFila(tabla, "Estados", estadosCorrectos, estadosIncorrectos, calcularNota
 
 // Fila final para sumar las columnas de "Nota"
 var filaSuma = tabla.insertRow();
-filaSuma.innerHTML = "<td>Total</td><td>" + (accionesCorrectas + reglasCorrectas + estadosCorrectos) + "</td><td>" + 
-(accionesIncorrectas + reglasIncorrectas + estadosIncorrectos) + "</td><td>"+ notas.reduce(function(acc, current) {
+var notaFinal=notas.reduce(function(acc, current) {
     return acc + current;
-  }, 0); +"</td>";
+  }, 0);
+console.log(notaFinal);
+filaSuma.innerHTML = "<td>Total</td><td>" + (accionesCorrectas + reglasCorrectas + estadosCorrectos) + "</td><td>" + 
+(accionesIncorrectas + reglasIncorrectas + estadosIncorrectos) + "</td><td>"+ notaFinal +"</td>";
 
 var max = parseInt(localStorage.getItem("maxEjercicio"));
 var current = parseInt(localStorage.getItem("nEjercicio"));
@@ -57,4 +59,47 @@ if((max) == current)
 {
     document.getElementById("final").style.display = "block";
     document.getElementById("next").style.display = "none";
+}
+
+function sigEjercicio()
+{
+    if(!localStorage.getItem("notas"))
+    {
+        var notas = [notaFinal];
+        localStorage.setItem("notas", JSON.stringify(notas));
+        console.log(notas);
+        console.log(JSON.stringify(notas));
+    }
+    else
+    {
+        var notas = JSON.parse(localStorage.getItem("notas"));
+        notas.push(notaFinal);
+        console.log(notas);
+        localStorage.setItem("notas", JSON.stringify(notas));
+    }
+        localStorage.removeItem("accionesRespuesta");
+        localStorage.removeItem("reglasRespuesta");
+        localStorage.removeItem("estadosRespuesta");
+        localStorage.removeItem("accionesSol");
+        localStorage.removeItem("reglasSol");
+        localStorage.removeItem("estadosSol"); 
+        window.location="Proyecto_RR.html";
+}
+function finEjercicio()
+{
+    if(!localStorage.getItem("notas"))
+    {
+        var notas = [notaFinal];
+        localStorage.setItem("notas", JSON.stringify(notas));
+        console.log(notas);
+        console.log(JSON.stringify(notas));
+    }
+    else
+    {
+        var notas = JSON.parse(localStorage.getItem("notas"));
+        notas.push(notaFinal);
+        console.log(notas);
+        localStorage.setItem("notas", JSON.stringify(notas));
+    }
+    window.location="final.html";
 }
